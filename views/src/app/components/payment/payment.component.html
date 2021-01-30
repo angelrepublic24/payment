@@ -1,0 +1,22 @@
+<div class="py-4 my-3" fxLayout="" fxLayoutAlign="center center">
+  <mat-card class="box">
+
+    <mat-card-content>
+      <form (ngSubmit)="createStripeToken()" class="checkout">
+        <label for="card-info">Card Info</label>&nbsp;
+          <div id="form-field">
+              <div id="card-info" #cardInfo></div>
+              <button id="submit-button" type="submit">
+                  Pay ${{_totalAmount}}
+              </button>
+              <mat-error id="card-errors" role="alert" *ngIf="cardError">
+                  <mat-icon style="color: #f44336">cancel</mat-icon>
+                  &nbsp;{{ cardError }}
+              </mat-error>
+          </div>
+      </form>
+    </mat-card-content>
+   </mat-card>
+ </div>
+
+
